@@ -1,0 +1,113 @@
+#bostadssok-companion-panel {
+  position: fixed;
+  top: 90px;
+  right: 16px;
+  width: 260px;
+  z-index: 999999;
+  background: #ffffff;
+  border: 1px solid #d8dce1;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 13px;
+  color: #1a1a1a;
+  /* Hemnet stretches every direct child of body with
+     "body > div:not(...) { height: 100% }" and exempts only its own overlays,
+     so pin our height explicitly instead of inheriting theirs. */
+  height: auto !important;
+  /* Never run past the fold on a short window; scroll inside the panel. */
+  max-height: calc(100vh - 106px);
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+#bostadssok-companion-panel .bsc-header {
+  background: #14532d;
+  color: white;
+  padding: 8px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 12.5px;
+}
+
+#bostadssok-companion-panel .bsc-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+#bostadssok-companion-panel .bsc-section {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+#bostadssok-companion-panel .bsc-section:last-child {
+  border-bottom: none;
+}
+
+#bostadssok-companion-panel .bsc-row {
+  margin-bottom: 4px;
+}
+
+#bostadssok-companion-panel .bsc-cost {
+  font-size: 18px;
+  font-weight: 700;
+  color: #14532d;
+}
+
+#bostadssok-companion-panel .bsc-small {
+  font-size: 11px;
+  color: #666;
+}
+
+#bostadssok-companion-panel .bsc-small a {
+  color: #2f6feb;
+}
+
+#bostadssok-companion-panel .bsc-retry {
+  margin-top: 6px;
+  padding: 4px 10px;
+  font-family: inherit;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #14532d;
+  background: #f1f5f3;
+  border: 1px solid #c5d6cc;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#bostadssok-companion-panel .bsc-retry:hover {
+  background: #e4ece7;
+}
+
+#bostadssok-companion-panel .bsc-stars {
+  margin-bottom: 6px;
+}
+
+#bostadssok-companion-panel .bsc-star {
+  cursor: pointer;
+  font-size: 18px;
+  color: #ccc;
+}
+
+#bostadssok-companion-panel .bsc-star-filled {
+  color: #e0a300;
+}
+
+#bostadssok-companion-panel .bsc-note {
+  width: 100%;
+  box-sizing: border-box;
+  height: 60px;
+  font-family: inherit;
+  font-size: 12px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  resize: vertical;
+}

@@ -1,0 +1,65 @@
+{
+  "manifest_version": 3,
+  "name": "Bostadssök Companion — verklig kostnad & avstånd",
+  "version": "0.1.1",
+  "description": "Se den verkliga månadskostnaden och avstånd till förskola/mataffär direkt på Hemnet- och Booli-annonser. Gratis.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://www.hemnet.se/*",
+    "https://www.booli.se/*",
+    "https://nominatim.openstreetmap.org/*",
+    "https://overpass.kumi.systems/*",
+    "https://overpass.private.coffee/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.hemnet.se/bostad/*", "https://www.booli.se/annons/*", "https://www.booli.se/*/annons/*"],
+      "js": ["content.js"],
+      "css": ["overlay.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "icon_variants": [
+      {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+      },
+      {
+        "16": "icons/icon16-dark.png",
+        "48": "icons/icon48-dark.png",
+        "128": "icons/icon128-dark.png",
+        "color_schemes": ["dark"]
+      }
+    ]
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "icon_variants": [
+    {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    {
+      "16": "icons/icon16-dark.png",
+      "48": "icons/icon48-dark.png",
+      "128": "icons/icon128-dark.png",
+      "color_schemes": ["dark"]
+    }
+  ],
+  "options_page": "options.html"
+}
